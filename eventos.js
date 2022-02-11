@@ -17,11 +17,11 @@ function comenzarJuego(event) {
     letrasIngresadas = [];
     vidas = "9";
     posicionTextoCorrecto = 100;
-    posicionTextoIncorrecto = 425;
+    posicionTextoIncorrecto = 575;
     contadorLetrasI = 0;
     posicionCorrecta = 100;
     contadorLetrasC = 0;
-    y = 760;
+    y = 655;
     
     palabraSecreta = escogerPalabra(lista);
 

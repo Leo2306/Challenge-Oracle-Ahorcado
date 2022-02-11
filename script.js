@@ -46,28 +46,14 @@ function dibujarTablero() {
     pincel.beginPath();
     pincel.strokeStyle = "white";
     pincel.font = "48px Dancing Script";
-    pincel.strokeText("Ingresa una letra", 490, 75);
+    pincel.strokeText("Presiona una letra :", 450, 75);
 
-	var x = 490;
-	var distancia = 15;
-	var xMaximo = 720;
-
-	pincel.beginPath();
-	pincel.strokeStyle = '#C4C91D';
-	pincel.lineWidth = 5;
-	pincel.moveTo(x, 230 * 0.45);
-
-	while (x < xMaximo) {
-        x += distancia;
-    	pincel.lineTo(x, 230* 0.4);
-    	x += distancia;
-    	pincel.lineTo(x, 230 * 0.45);
-    }
-    pincel.stroke();
 
     pincel.beginPath();
     pincel.fillStyle = "white";
-    pincel.fillText("letras incorrectas:", 450, 700);
+    pincel.font = "36px arial"
+    pincel.fillText("letras incorrectas:", 275, 650);
+
 
     pincel.strokeStyle = "red"
     pincel.beginPath();
@@ -82,7 +68,7 @@ function dibujarTablero() {
 
     pincel.fillStyle = "yellow";
     pincel.font = "24px arial";
-    pincel.fillText("**Presiona la tecla ESC si quiere salir",30,50);
+    pincel.fillText("**Presiona la tecla ESC si quiere salir",400,750);
 
 }
 
@@ -97,8 +83,8 @@ var palabra = "";
 
 function dibujarLineas(palabra) {
 
-    var posicionMoveTo = 370;  
-    var posicionLineTo = 400;
+    var posicionMoveTo = 530;  
+    var posicionLineTo = 560;
 
   var palabraNueva = palabra.split("");
 
@@ -109,8 +95,8 @@ function dibujarLineas(palabra) {
   for(var i = 0; i < palabraNueva.length; i++) {
 
       if(!(palabraNueva[i] == " ")) {
-          pincel.moveTo(posicionMoveTo,580); // 
-          pincel.lineTo(posicionLineTo,580); // 
+          pincel.moveTo(posicionMoveTo,475); // 
+          pincel.lineTo(posicionLineTo,475); // 
           pincel.stroke();
           posicionMoveTo = posicionMoveTo + 45;
           posicionLineTo = posicionLineTo + 45;
@@ -187,16 +173,16 @@ function dibujarBase() {
     pincel.beginPath();
     pincel.strokeStyle = "white";
 
-    var x = 415;
+    var x = 110;
     var y = 475;
 
     for(var i = 0; i < 3; i++) {
         pincel.moveTo(x,y);
         x = x + 100;
-        if(x == 515) {
+        if(x == 210) {
             y = 425;
             pincel.lineTo(x,y);
-    }   else if (x == 615) {
+    }   else if (x == 310) {
             y = 475;
             pincel.lineTo(x,y);
         }
@@ -211,15 +197,15 @@ function dibujarHorca(num) {
     pincel.strokeStyle = "white";
 
     if(num == 1) {
-        pincel.moveTo(515,425);
-        pincel.lineTo(515,125);
+        pincel.moveTo(210,425);
+        pincel.lineTo(210,120);
     } else {
         if (num == 2) {
-            pincel.moveTo(515,125);
-            pincel.lineTo(715,125);
+            pincel.moveTo(210,120);
+            pincel.lineTo(410,120);
         } else {
-            pincel.moveTo(715,125);
-            pincel.lineTo(715,175);
+            pincel.moveTo(410,120);
+            pincel.lineTo(410,175);
         } 
     } 
     pincel.stroke();
@@ -272,43 +258,43 @@ function dibujarAhorcado(errores) {
 
 function dibujarCabeza() {
     pincel.beginPath();
-    pincel.arc(715,215,40,0,(2*Math.PI));
+    pincel.arc(410,215,40,0,(2*Math.PI));
     pincel.strokeStyle = "white";
     pincel.stroke();
 }
 
 function dibujarTronco() {
     pincel.beginPath();
-    pincel.moveTo(715,255);
-    pincel.lineTo(715,390);
+    pincel.moveTo(410,255);
+    pincel.lineTo(410,390);
     pincel.stroke();
 }
 
 function dibujarBrazoIzquierdo() {
     pincel.beginPath();
-    pincel.moveTo(715,300);
-    pincel.lineTo(640,260);
+    pincel.moveTo(410,300);
+    pincel.lineTo(335,260);
     pincel.stroke();
 }
 
 function dibujarBrazoDerecho() {
     pincel.beginPath();
-    pincel.moveTo(715,300);
-    pincel.lineTo(790,260);
+    pincel.moveTo(410,300);
+    pincel.lineTo(485,260);
     pincel.stroke();
 }
 
 function dibujarPiernaIzquierda() {
     pincel.beginPath();
-    pincel.moveTo(715,390);
-    pincel.lineTo(645,445);
+    pincel.moveTo(410,390);
+    pincel.lineTo(340,445);
     pincel.stroke();
 }
 
 function dibujarPiernaDerecha() {
     pincel.beginPath();
-    pincel.moveTo(714,390);
-    pincel.lineTo(785,445);
+    pincel.moveTo(410,390);
+    pincel.lineTo(480,445);
     pincel.stroke();
 }
 
@@ -333,7 +319,7 @@ function dibujarFraseFin() {
 
     pincel.fillStyle = "red";
     pincel.font = "normal small-caps bold 24px arial";
-    pincel.fillText("Fin del juego!. La palabra correcta era: " + palabraSecreta, 300, 635);
+    pincel.fillText("Fin del juego!. La palabra correcta era: " + palabraSecreta, 275, 565);
 
 }
 
