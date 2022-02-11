@@ -1,0 +1,90 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Dancing Script', cursive;
+  background-image: linear-gradient(#CAD6D6, #95A3A3);
+}
+
+.navegacion,
+footer {
+  font-size: 1.5rem;
+}
+  
+  .btn {
+    border: 0;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(33, 37, 41, 0.95);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 0.5em;
+  }
+
+  .text-input {
+    border-radius: 0.5em;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: block;
+    padding: 0.5em;
+    max-width: 200px;
+    width: 100%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.titulo {
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+  
+
+.canvas {
+    display: none;
+}
+
+#canvas {
+    margin: 70px auto;
+}
+
+.div {
+  width: 1334px;
+  height: 944px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-off {
+  display: none;
+  margin: auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+button:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.imagen {
+  height: 400px;
+  margin: 3rem auto;
+}
+
