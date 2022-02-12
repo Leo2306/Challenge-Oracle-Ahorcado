@@ -106,6 +106,7 @@ function presionarTecla(event) {
                     }
                 }
             } else {
+                    if(letraTeclado != "CapsLock") {
                     pincel.beginPath();
                     pincel.fillStyle = "white";
                     pincel.font = "normal small-caps bold 36px Dancing Script";
@@ -118,6 +119,7 @@ function presionarTecla(event) {
                         pincel.closePath();
                         },1000);
                     pincel.closePath();
+                }
             }
         }
     }
