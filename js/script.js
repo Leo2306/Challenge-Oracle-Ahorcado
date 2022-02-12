@@ -141,6 +141,7 @@ function verificarLetraCorrecta(palabra,letraTeclado) {
                 letraCorrecta.push(letraTeclado);
             } else {
                 pincel.fillStyle = "white";
+                pincel.fillRect(250,525,700,50);
                 pincel.fillText("Ya ingresaste esa letra", 400, 555);
                 setTimeout(function(){
                 pincel.beginPath();
@@ -337,8 +338,10 @@ function finalizarJuego() {
 function dibujarFraseFin() {
 
     pincel.beginPath();
-    pincel.fillStyle = "red";
     pincel.font = "normal small-caps bold 36px Dancing Script";
+    pincel.fillStyle = "#23231D";
+    pincel.fillRect(200,525,800,50);
+    pincel.fillStyle = "red";
     pincel.fillText("Fin del juego!. La palabra correcta era: " + palabraSecreta, 215, 555);
     pincel.closePath();
     setTimeout(function(){canvas.classList.add("canvas")},3000);
@@ -367,7 +370,9 @@ function verificarGanador(palabra,letraTeclado) {
     
     if(palabraIngresada == palabra) {
 
-        document.removeEventListener("keydown",presionarTecla); 
+        document.removeEventListener("keydown",presionarTecla);
+        pincel.fillRect(200,525,800,50);
+        pincel.fillStyle = "#23231D";
         pincel.fillStyle = "green";
         pincel.font = "normal small-caps bold 36px Dancing Script";
         pincel.fillText("Ganaste, felicitaciones!!",450,555);

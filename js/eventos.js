@@ -58,6 +58,8 @@ function presionarTecla(event) {
     if(letraTeclado == "Escape") {
         document.removeEventListener("keydown",presionarTecla); 
         pincel.beginPath();
+        pincel.fillStyle = "#23231D";
+        pincel.fillRect(200,525,800,50);
         pincel.fillStyle = "white";
         pincel.font = "normal small-caps bold 36px Dancing Script";
         pincel.fillText("has finalizado el juego, la palabra era: " + palabraSecreta, 215, 555);
@@ -106,7 +108,8 @@ function presionarTecla(event) {
                         pincel.closePath();
     
                     } else {
-    
+                        pincel.fillStyle = "#23231D";
+                        pincel.fillRect(200,525,800,50);
                         pincel.fillStyle = "white";
                         pincel.fillText("Ya ingresaste esa letra", 400, 555);
                         setTimeout(function(){
@@ -121,6 +124,8 @@ function presionarTecla(event) {
             } else {
                     if(letraTeclado != "CapsLock") {
                     pincel.beginPath();
+                    pincel.fillStyle = "#23231D";
+                    pincel.fillRect(200,525,800,50);
                     pincel.fillStyle = "white";
                     pincel.font = "normal small-caps bold 36px Dancing Script";
                     pincel.fillText("** debes ingresar una letra mayúscula **",350,555);

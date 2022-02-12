@@ -15,7 +15,7 @@
 <header>
   <nav class="navegacion navbar navbar-expand-md navbar-dark bg-dark">
     <a name="inicio"><div class="container"></a>
-            <a class="navbar-brand" href="#">ChallangeONE</a>
+            <a class="navbar-brand" href="https://www.aluracursos.com/challenges/oracle-one">ChallangeONE</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navegacion">
               <span class="navbar-toggler-icon ms-auto"></span>
             </button>
@@ -31,22 +31,22 @@
   </header>
   
 
-  <section class="vh-100">
-    <div class="container">
+  <section class="container vh-100">
 
-      <div class="d-flex flex-column justify-content-center align-items-center">
-        <h1 class="titulo display-1">ahorcado</h1>
+      <div class="d-flex flex-column justify-content-start align-items-center h-100">
+        <h1 class="titulo">ahorcado</h1>
         <img class="imagen img-fluid" src="img/hangman-game.png" alt="imagen ahorcado"> 
-        <div class="d-flex flex-column align-items-center justify-content-center">
+        <div class="my-5 d-flex flex-column align-items-center justify-content-center">
             <button class="btn" id="iniciar-juego">INICIAR JUEGO</button>
-          <input class="text-input my-3" type="text" id="input-nueva-palabra" placeholder="Escriba una nueva palabra">
-          <button class="btn" id="nueva-palabra">AGREGAR PALABRA</button> 
+            <p class="my-2">Puedes adicionar una palabra en el siguiente campo: </p>  
+            <input class="text-input my-3" type="text" id="input-nueva-palabra" placeholder="Escriba una nueva palabra"> 
+            <button class="btn" id="nueva-palabra">AGREGAR PALABRA</button>      
         </div>
+        
       </div>
-  </div>
 </section>
 
-    <div id="tablero-canvas" style="text-align:center;">
+    <div id="tablero-canvas" class="tablero-canvas">
       <canvas id="canvas" class="canvas" height="800px" width="1200px">
       </canvas>
     </div>

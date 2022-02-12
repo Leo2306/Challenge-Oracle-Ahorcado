@@ -8,7 +8,7 @@ html {
 body {
   font-family: 'Dancing Script', cursive;
   background-image: linear-gradient(#CAD6D6, #95A3A3);
-  font-weight: bold;
+  font-size: 2rem
 }
 
 .navegacion,
@@ -21,7 +21,7 @@ footer {
     color: white;
     font-weight: bold;
     background-color: rgba(33, 37, 41, 0.95);
-    padding: 10px;
+    padding: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 0.5em;
@@ -32,17 +32,22 @@ footer {
     border: 1px solid rgba(0, 0, 0, 0.2);
     display: block;
     padding: 0.5em;
-    max-width: 200px;
-    width: 100%;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 500px;
+    max-width: 100%;
+    width: auto;
+    height: 75px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 2rem;
+    text-align: center;
   }
 
 .titulo {
   text-transform: uppercase;
-  font-size: 3rem;
-  margin-top: 2rem;
+  font-size: 4rem;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  font-weight: bold;
 }
   
 
@@ -52,6 +57,7 @@ footer {
 
 #canvas {
     margin: 70px auto;
+    margin-top: 50px;
 }
 
 .div {
@@ -84,18 +90,12 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-.imagen {
-  height: 400px;
-  margin: 3rem auto;
-}
-
 .reglas {
   text-align: center;
   background: rgb(0, 0, 0, 0.2);
   box-shadow: 0 0 20px 0 rgb(255 255 255 / 30%);
   font-size: 1.8rem;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
+  padding: 2rem;
   border-radius: 0.5rem;
 }
 
@@ -111,4 +111,8 @@ button:hover {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.tablero-canvas {
+  text-align: center;
 }
