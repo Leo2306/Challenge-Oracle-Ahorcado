@@ -1,11 +1,7 @@
 var botonIniciar = document.querySelector("#iniciar-juego");
 
-var botonReinicio = document.createElement("button");
-
 botonIniciar.addEventListener("click", comenzarJuego);
     
-botonReinicio.addEventListener("click",comenzarJuego);
-
 function comenzarJuego(event) {
 
     event.preventDefault();
@@ -58,13 +54,18 @@ function presionarTecla(event) {
         pincel.beginPath();
         pincel.fillStyle = "white";
         pincel.font = "normal small-caps bold 36px Dancing Script";
-        pincel.fillText("has finalizado el juego", 450, 555);
-        setTimeout(function(){canvas.classList.add("canvas")},2000);
-        setTimeout(function(){scroll("nav")},1500);
+        pincel.fillText("has finalizado el juego, la palabra era: " + palabraSecreta, 215, 555);
+        setTimeout(function(){canvas.classList.add("canvas")},3000);
+        setTimeout(function(){scroll("nav")},2500);
         pincel.closePath();
 
     } else {
         if (letraTeclado == "Tab") {
+            pincel.beginPath();
+            pincel.fillStyle = "white";
+            pincel.font = "normal small-caps bold 36px Dancing Script";
+            pincel.fillText("has cambiado de palabra, la palabra era: " + palabraSecreta, 215, 555);
+            pincel.closePath();
             document.addEventListener("keydown",comenzarJuego);
         } else {
             if(verificarLetra(letraTeclado)) {
@@ -74,7 +75,9 @@ function presionarTecla(event) {
                     dibujarLetrasCorrectas(palabraSecreta,letraTeclado);
                     verificarGanador(palabraSecreta,letraTeclado);
     
-                } else if (!(letraIncorrecta.includes(letraTeclado))) {
+                } else {
+
+                    if (!(letraIncorrecta.includes(letraTeclado))) {
                         console.log("letraincorrecta")
                         letraIncorrecta.push(letraTeclado) 
                         errores += 1;
@@ -89,15 +92,23 @@ function presionarTecla(event) {
                         pincel.fillText(vidas,1060,125);
                         pincel.closePath();
     
-                } else {
+                    } else {
     
-                    console.log("ya ingresaste esa letra");
-    
+                        pincel.fillStyle = "white";
+                        pincel.fillText("Ya ingresaste esa letra", 400, 555);
+                        setTimeout(function(){
+                        pincel.beginPath();
+                        pincel.fillStyle = "#23231D";
+                        pincel.fillRect(250,520,700,50);
+                        pincel.fill();
+                        pincel.closePath();
+                        },1000);
+                    }
                 }
             } else {
                     pincel.beginPath();
                     pincel.fillStyle = "white";
-                    pincel.font = "normal small-caps bold 32px Dancing Script";
+                    pincel.font = "normal small-caps bold 36px Dancing Script";
                     pincel.fillText("** debes ingresar una letra mayúscula **",350,555);
                     setTimeout(function(){
                         pincel.beginPath();

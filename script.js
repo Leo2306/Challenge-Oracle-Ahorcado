@@ -57,7 +57,7 @@ function dibujarTablero() {
     pincel.beginPath();
     pincel.fillStyle = "white";
     pincel.font = "normal small-caps bold 36px Dancing Script"
-    pincel.fillText("letras incorrectas :", 275, 625);
+    pincel.fillText("Letras incorrectas :", 275, 625);
     pincel.closePath();
 
     pincel.beginPath();
@@ -75,8 +75,9 @@ function dibujarTablero() {
 
     pincel.beginPath();
     pincel.fillStyle = "yellow";
-    pincel.font = "normal small-caps bold 24px Dancing Script";
-    pincel.fillText("**Presiona la tecla ESC si quiere salir",400,750);
+    pincel.font = "normal small-caps bold 30px Dancing Script";
+    pincel.fillText("**Presiona la tecla ''ESC'' si quiere salir**",330,715);
+    pincel.fillText("**Presiona la tecla ''TAB'' dos veces si quiere otra palabra**",240,760);
     pincel.closePath();
 
 
@@ -131,17 +132,29 @@ function verificarLetra(letra) {
 
 function verificarLetraCorrecta(palabra,letraTeclado) {
 
-    for (var i = 0; i < palabra.length; i++) {
+    console.log("Se verifica");
 
         if(palabra.includes(letraTeclado)) {
             resultado = true;
             if(!(letraCorrecta.includes(letraTeclado))) {
                 letraCorrecta.push(letraTeclado);
+            } else {
+                pincel.fillStyle = "white";
+                pincel.fillText("Ya ingresaste esa letra", 400, 555);
+                setTimeout(function(){
+                pincel.beginPath();
+                pincel.fillStyle = "#23231D";
+                pincel.fillRect(250,520,700,50);
+                pincel.fill();
+                pincel.closePath();
+                },1000);
             }
         } else {  
+
             resultado = false;
+    
         }
-    }
+
     return resultado;
 }
 
@@ -330,8 +343,8 @@ function dibujarFraseFin() {
 
     pincel.beginPath();
     pincel.fillStyle = "red";
-    pincel.font = "normal small-caps bold 30px Dancing Script";
-    pincel.fillText("Fin del juego!. La palabra correcta era: " + palabraSecreta, 275, 555);
+    pincel.font = "normal small-caps bold 36px Dancing Script";
+    pincel.fillText("Fin del juego!. La palabra correcta era: " + palabraSecreta, 215, 555);
     pincel.closePath();
 
 }
@@ -357,8 +370,8 @@ function verificarGanador(palabra,letraTeclado) {
 
         document.removeEventListener("keydown",presionarTecla); 
         pincel.fillStyle = "green";
-        pincel.font = "normal small-caps bold 30px Dancing Script";
-        pincel.fillText("Ganaste, felicitaciones!!",450,565);
+        pincel.font = "normal small-caps bold 36px Dancing Script";
+        pincel.fillText("Ganaste, felicitaciones!!",450,555);
 
     }
 
