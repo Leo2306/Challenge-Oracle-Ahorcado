@@ -1,4 +1,5 @@
 var botonIniciar = document.querySelector("#iniciar-juego");
+var div = document.querySelector("#tablero-canvas");
 
 botonIniciar.addEventListener("click", comenzarJuego);
     
@@ -7,6 +8,11 @@ function comenzarJuego(event) {
     event.preventDefault();
 
     document.removeEventListener("keydown",comenzarJuego);
+
+    scroll("#tablero-canvas");
+
+    div.classList.add("vh-100");
+    document.body.classList.add("overflow-off");
 
     letraCorrecta = [];
     letraIncorrecta = [];
@@ -19,6 +25,7 @@ function comenzarJuego(event) {
     contadorLetrasC = 0;
     errores = 0;
     y = 630;
+
     
     palabraSecreta = escogerPalabra(lista);
 
@@ -28,7 +35,6 @@ function comenzarJuego(event) {
 
     dibujarBase();
 
-    scroll("#canvasito");
 
     document.addEventListener("keydown", presionarTecla);
 
@@ -50,13 +56,19 @@ function presionarTecla(event) {
     console.log(event.key)
 
     if(letraTeclado == "Escape") {
-
+        document.removeEventListener("keydown",presionarTecla); 
         pincel.beginPath();
         pincel.fillStyle = "white";
         pincel.font = "normal small-caps bold 36px Dancing Script";
         pincel.fillText("has finalizado el juego, la palabra era: " + palabraSecreta, 215, 555);
-        setTimeout(function(){canvas.classList.add("canvas")},3000);
-        setTimeout(function(){scroll("nav")},2500);
+        setTimeout(function(){
+            canvas.classList.add("canvas");
+            div.classList.remove("vh-100");
+            document.body.classList.remove("overflow-off");
+        },3000);
+        setTimeout(function(){
+            scroll("nav");
+        },2500);
         pincel.closePath();
 
     } else {
@@ -65,6 +77,7 @@ function presionarTecla(event) {
             pincel.fillStyle = "white";
             pincel.font = "normal small-caps bold 36px Dancing Script";
             pincel.fillText("has cambiado de palabra, la palabra era: " + palabraSecreta, 215, 555);
+            pincel.fillText("--Presiona cualquier tecla para continuar--", 500, 300);
             pincel.closePath();
             document.addEventListener("keydown",comenzarJuego);
         } else {

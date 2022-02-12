@@ -27,6 +27,7 @@ function dibujarTablero() {
 	for(var i = 0; i < 25; i = i + 5) {
 
         pincel.beginPath();
+        pincel.lineWidth = 3;
         pincel.fillStyle = "#C79960";
         pincel.strokeStyle = "black";
         pincel.moveTo(i,i);
@@ -61,7 +62,7 @@ function dibujarTablero() {
     pincel.closePath();
 
     pincel.beginPath();
-    pincel.lineWidth = 5;
+    pincel.lineWidth = 3;
     pincel.strokeStyle = "red";
     pincel.moveTo(1075,75);
     pincel.bezierCurveTo(1075,72,1070,60,1050,60);
@@ -77,7 +78,7 @@ function dibujarTablero() {
     pincel.fillStyle = "yellow";
     pincel.font = "normal small-caps bold 30px Dancing Script";
     pincel.fillText("**Presiona la tecla ''ESC'' si quiere salir**",330,715);
-    pincel.fillText("**Presiona la tecla ''TAB'' dos veces si quiere otra palabra**",240,760);
+    pincel.fillText("**Presiona la tecla ''TAB'' si quiere otra palabra**",280,760);
     pincel.closePath();
 
 
@@ -101,7 +102,7 @@ function dibujarLineas(palabra) {
 
   pincel.beginPath();
     pincel.strokeStyle = "white";
-    pincel.lineWidth = 5;
+    pincel.lineWidth = 3;
 
   for(var i = 0; i < palabraNueva.length; i++) {
 
@@ -330,13 +331,7 @@ function eliminarTablero() {
 function finalizarJuego() {
 
         document.removeEventListener("keydown",presionarTecla);
-        /*
-        botonReinicio.classList.remove("btn-off");  
-        var div = document.querySelector("#canvasito");
-        botonReinicio.textContent = "Reiniciar";
-        setTimeout(function() {div.appendChild(botonReinicio);
-        div.classList.add("div");},5000);
-*/
+
 }
 
 function dibujarFraseFin() {
@@ -348,7 +343,8 @@ function dibujarFraseFin() {
     pincel.closePath();
     setTimeout(function(){canvas.classList.add("canvas")},3000);
     setTimeout(function(){scroll("nav")},2500);
-    
+    document.body.classList.remove("overflow-off");
+    div.classList.remove("vh-100");
 
 }
 
@@ -377,6 +373,8 @@ function verificarGanador(palabra,letraTeclado) {
         pincel.fillText("Ganaste, felicitaciones!!",450,555);
         setTimeout(function(){canvas.classList.add("canvas")},3500);
         setTimeout(function(){scroll("nav")},3000);
+        document.body.classList.remove("overflow-off");
+        div.classList.remove("vh-100");
     }
 
 }

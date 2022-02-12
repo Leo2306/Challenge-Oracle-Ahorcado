@@ -14,8 +14,7 @@
 
 <header>
   <nav class="navegacion navbar navbar-expand-md navbar-dark bg-dark">
-    <a name="inicio"></a>
-        <div class="container">
+    <a name="inicio"><div class="container"></a>
             <a class="navbar-brand" href="#">ChallangeONE</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navegacion">
               <span class="navbar-toggler-icon ms-auto"></span>
@@ -23,8 +22,7 @@
             <div id="navegacion" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav ms-auto">
                   <li class="nav-item active"><a class="nav-link" href="#inicio">Inicio</a></li>
-                  <li class="nav-item active"><a class="nav-link" href="">Juego</a></li>
-                  <li class="nav-item active"><a class="nav-link" href="#reglas">Ver Reglas</a></li>
+                  <li class="nav-item active"><a class="nav-link" href="#reglas" >Ver Reglas</a></li>
                 </ul>
             </div>
         
@@ -34,7 +32,7 @@
   
 
   <section class="vh-100">
-    <div id="general" class="container">
+    <div class="container">
 
       <div class="d-flex flex-column justify-content-center align-items-center">
         <h1 class="titulo display-1">ahorcado</h1>
@@ -48,13 +46,12 @@
   </div>
 </section>
 
-    <div id="canvasito" style="text-align:center;">
+    <div id="tablero-canvas" style="text-align:center;">
       <canvas id="canvas" class="canvas" height="800px" width="1200px">
       </canvas>
     </div>
 
-    <section class="container-fluid vh-100">
-      <a name="reglas"></a>
+    <a name="reglas"><section class="container-fluid vh-100"></a>
       <div class="container reglas">
         <h2 class="display-2">Reglas del juego</h3>
         <ul>
