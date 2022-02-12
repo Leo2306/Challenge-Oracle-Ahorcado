@@ -18,45 +18,51 @@ var pincel = tablero.getContext("2d");
 
 
 
-var lista = ["san martin", "boca juniors", "river plate", "racing","independiente"];
+var lista = ["SAN MARTIN", "BOCA JUNIORS", "RIVER PLATE", "RACING","INDEPENDIENTE"];
 
 function dibujarTablero() {
 
     canvas.classList.remove("canvas");
 
 	for(var i = 0; i < 25; i = i + 5) {
-        pincel.fillStyle = "#C79960";
+
         pincel.beginPath();
+        pincel.fillStyle = "#C79960";
+        pincel.strokeStyle = "black";
         pincel.moveTo(i,i);
         pincel.lineTo(i,800-i); 
         pincel.lineTo(1200-i,800-i);
         pincel.lineTo(1200-i,i);
         pincel.lineTo(i,i);
-        pincel.fill();
-        pincel.strokeStyle = "black";
         pincel.stroke();
+        pincel.fill();
+        pincel.closePath();
+
 
     if(i == 20) {
         pincel.beginPath();
         pincel.fillStyle = "#23231D";
         pincel.fillRect(i,i,1200-i*2,800-i*2);
+        pincel.closePath();
     }
 }
 
     pincel.beginPath();
-    pincel.strokeStyle = "white";
-    pincel.font = "48px Dancing Script";
-    pincel.strokeText("Presiona una letra :", 450, 75);
+    pincel.fillStyle = "white";
+    pincel.font = "normal small-caps bold 48px Dancing Script";
+    pincel.fillText("presiona una letra :", 425, 75);
+    pincel.closePath();
 
 
     pincel.beginPath();
     pincel.fillStyle = "white";
-    pincel.font = "36px arial"
-    pincel.fillText("letras incorrectas:", 275, 650);
+    pincel.font = "normal small-caps bold 36px Dancing Script"
+    pincel.fillText("letras incorrectas :", 275, 625);
+    pincel.closePath();
 
-
-    pincel.strokeStyle = "red"
     pincel.beginPath();
+    pincel.lineWidth = 5;
+    pincel.strokeStyle = "red";
     pincel.moveTo(1075,75);
     pincel.bezierCurveTo(1075,72,1070,60,1050,60);
     pincel.bezierCurveTo(1020,60,1020,97.5,1020,97.5);
@@ -65,10 +71,14 @@ function dibujarTablero() {
     pincel.bezierCurveTo(1130,97.5,1130,60,1100,60);
     pincel.bezierCurveTo(1085,60,1075,72,1075,75);
     pincel.stroke();
+    pincel.closePath();
 
+    pincel.beginPath();
     pincel.fillStyle = "yellow";
-    pincel.font = "24px arial";
+    pincel.font = "normal small-caps bold 24px Dancing Script";
     pincel.fillText("**Presiona la tecla ESC si quiere salir",400,750);
+    pincel.closePath();
+
 
 }
 
@@ -109,7 +119,7 @@ function dibujarLineas(palabra) {
 
 function verificarLetra(letra) {
 
-    var comparar = new RegExp(/[A-Z]/);
+    const comparar = new RegExp(/^[A-Z]$/);
 
     if(comparar.test(letra)) {
         resultado = true;
@@ -137,7 +147,7 @@ function verificarLetraCorrecta(palabra,letraTeclado) {
 
 function dibujarLetrasCorrectas(palabra,letraTeclado) {
 
-    var posicionCorrecta = 370;
+    var posicionCorrecta = 530;
 
       for(var i = 0; i < palabra.length; i++) {
 
@@ -145,13 +155,12 @@ function dibujarLetrasCorrectas(palabra,letraTeclado) {
 
     
           if (letra == letraTeclado) {
-            
+            pincel.beginPath();
               pincel.fillStyle = "white";
-              pincel.beginPath();
-              pincel.font = "normal small-caps bold 48px arial";
-              pincel.fillText(letraTeclado,posicionCorrecta,570);
+              pincel.font = "normal small-caps bold 40px Dancing Script";
+              pincel.fillText(letraTeclado,posicionCorrecta,465);
               posicionCorrecta = posicionCorrecta + 45;
-
+            pincel.closePath();
           } else {
                 posicionCorrecta = posicionCorrecta + 45;
           }
@@ -162,7 +171,7 @@ function dibujarLetraIncorrecta(letraTeclado) {
 
                 pincel.fillStyle = "red";
                 pincel.beginPath()
-                pincel.font = "normal small-caps bold 48px arial";
+                pincel.font = "normal small-caps bold 48px Dancing Script";
                 pincel.fillText(letraTeclado,posicionTextoIncorrecto,y);
                 posicionTextoIncorrecto = posicionTextoIncorrecto + 40;
 
@@ -194,6 +203,7 @@ function dibujarBase() {
 
 function dibujarHorca(num) {
 
+    pincel.beginPath();
     pincel.strokeStyle = "white";
 
     if(num == 1) {
@@ -209,6 +219,7 @@ function dibujarHorca(num) {
         } 
     } 
     pincel.stroke();
+    pincel.closePath();
 }
 
 function dibujarAhorcado(errores) {
@@ -317,9 +328,11 @@ function finalizarJuego() {
 
 function dibujarFraseFin() {
 
+    pincel.beginPath();
     pincel.fillStyle = "red";
-    pincel.font = "normal small-caps bold 24px arial";
-    pincel.fillText("Fin del juego!. La palabra correcta era: " + palabraSecreta, 275, 565);
+    pincel.font = "normal small-caps bold 30px Dancing Script";
+    pincel.fillText("Fin del juego!. La palabra correcta era: " + palabraSecreta, 275, 555);
+    pincel.closePath();
 
 }
 
@@ -344,8 +357,8 @@ function verificarGanador(palabra,letraTeclado) {
 
         document.removeEventListener("keydown",presionarTecla); 
         pincel.fillStyle = "green";
-        pincel.font = "normal small-caps bold 24px arial";
-        pincel.fillText("Ganaste, felicitaciones!!",450,635);
+        pincel.font = "normal small-caps bold 30px Dancing Script";
+        pincel.fillText("Ganaste, felicitaciones!!",450,565);
 
     }
 

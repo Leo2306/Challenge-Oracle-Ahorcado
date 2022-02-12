@@ -8,6 +8,7 @@ html {
 body {
   font-family: 'Dancing Script', cursive;
   background-image: linear-gradient(#CAD6D6, #95A3A3);
+  font-weight: bold;
 }
 
 .navegacion,
