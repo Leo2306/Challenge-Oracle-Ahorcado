@@ -17,9 +17,6 @@ var tablero = document.querySelector("canvas");
 var pincel = tablero.getContext("2d");
 
 
-
-var lista = ["SAN MARTIN", "BOCA JUNIORS", "RIVER PLATE", "RACING","INDEPENDIENTE"];
-
 function dibujarTablero() {
 
     canvas.classList.remove("canvas");
@@ -140,8 +137,9 @@ function verificarLetraCorrecta(palabra,letraTeclado) {
             if(!(letraCorrecta.includes(letraTeclado))) {
                 letraCorrecta.push(letraTeclado);
             } else {
-                pincel.fillStyle = "white";
+                pincel.fillStyle = "#23231D";
                 pincel.fillRect(250,525,700,50);
+                pincel.fillStyle = "white";
                 pincel.fillText("Ya ingresaste esa letra", 400, 555);
                 setTimeout(function(){
                 pincel.beginPath();
@@ -344,10 +342,12 @@ function dibujarFraseFin() {
     pincel.fillStyle = "red";
     pincel.fillText("Fin del juego!. La palabra correcta era: " + palabraSecreta, 215, 555);
     pincel.closePath();
-    setTimeout(function(){canvas.classList.add("canvas")},3000);
-    setTimeout(function(){scroll("nav")},2500);
+    setTimeout(function(){canvas.classList.add("canvas");
     document.body.classList.remove("overflow-off");
     div.classList.remove("vh-100");
+    },3000);
+    setTimeout(function(){scroll("nav")},2500);
+    
 
 }
 
@@ -371,15 +371,16 @@ function verificarGanador(palabra,letraTeclado) {
     if(palabraIngresada == palabra) {
 
         document.removeEventListener("keydown",presionarTecla);
-        pincel.fillRect(200,525,800,50);
         pincel.fillStyle = "#23231D";
+        pincel.fillRect(200,525,800,50);
         pincel.fillStyle = "green";
         pincel.font = "normal small-caps bold 36px Dancing Script";
         pincel.fillText("Ganaste, felicitaciones!!",450,555);
-        setTimeout(function(){canvas.classList.add("canvas")},3500);
-        setTimeout(function(){scroll("nav")},3000);
+        setTimeout(function(){canvas.classList.add("canvas");
         document.body.classList.remove("overflow-off");
         div.classList.remove("vh-100");
+        },3500);
+        setTimeout(function(){scroll("nav")},3000);
     }
 
 }

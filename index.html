@@ -37,12 +37,12 @@
         <h1 class="titulo">ahorcado</h1>
         <img class="imagen img-fluid" src="img/hangman-game.png" alt="imagen ahorcado"> 
         <div class="my-5 d-flex flex-column align-items-center justify-content-center">
-            <button class="btn" id="iniciar-juego">INICIAR JUEGO</button>
-            <p class="my-2">Puedes adicionar una palabra en el siguiente campo: </p>  
-            <input class="text-input my-3" type="text" id="input-nueva-palabra" placeholder="Escriba una nueva palabra"> 
+            <button class="btn" id="iniciar-juego">INICIAR NUEVO JUEGO</button>
+            <p class="my-2 text-center">Puedes adicionar una palabra en el siguiente campo (<a class="link-parrafo" href="#reglapalabras">Ver reglas</a>)</p>  
+            <input class="text-input my-3" name="texto" type="text" id="input-nueva-palabra" placeholder="Escriba una nueva palabra"> 
+            <span id="span-error" class="span-error"></span>
             <button class="btn" id="nueva-palabra">AGREGAR PALABRA</button>      
         </div>
-        
       </div>
 </section>
 
@@ -51,9 +51,9 @@
       </canvas>
     </div>
 
-    <a name="reglas"><section class="container-fluid vh-100"></a>
+    <a name="reglas"><section class="container-fluid"></a>
       <div class="container reglas">
-        <h2 class="display-2">Reglas del juego</h3>
+        <h2 class="display-3">Reglas del juego</h2>
         <ul>
           <li class="item-lista">Para comenzar presione el boton iniciar juego</li>
           <li class="item-lista">El objetivo es encontrar la palabra oculta acorde a los casilleros disponibles</li>
@@ -63,6 +63,12 @@
           <li class="item-lista">No deben ser utilizadas letras con acentos ni caracteres especiales</li>
           <li class="item-lista">No es posible ingresar números durante el desarrollo del juego</li>
           <li class="item-lista">Durante el juego podra presionar la tecla "Escape" para salir o "Tab" para cambiar de palabra. Cualquier accion revelara la palabra oculta</li>
+        </ul>
+        <a name="reglapalabras"><h2 class="display-3">Reglas para agregar palabras</h2></a>
+        <ul>
+          <li class="item-lista">Solo puede agregar palabras de hasta 14 caracteres inclusive</li>
+          <li class="item-lista">La palabra debe contener solo letras, no se admiten caracteres especiales, acentos ni numeros</li>
+          <li class="item-lista">Seran tomadas solo palabras en mayúsculas</li>
         </ul>
       </div>
     </section>
@@ -80,8 +86,10 @@
       </div>
     </footer>
 
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/eventos.js"></script>
+    <script src="js/palabras.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/eventos.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
   </body>
 </html>

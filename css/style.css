@@ -46,7 +46,7 @@ footer {
   text-transform: uppercase;
   font-size: 4rem;
   margin-top: 50px;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
   font-weight: bold;
 }
   
@@ -115,4 +115,23 @@ button:hover {
 
 .tablero-canvas {
   text-align: center;
+}
+
+.link-parrafo {
+  color: black;
+}
+
+#span-error {
+  margin-top: 0;
+  height: 45px;
+}
+
+.mensaje-error {
+    color: #d63031;
+    font-size: 1.8rem;
+}
+
+.mensaje-correcto {
+  color: green;
+  font-size: 1.8rem;
 }
