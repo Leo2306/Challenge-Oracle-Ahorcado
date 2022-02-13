@@ -344,7 +344,8 @@ function dibujarFraseFin() {
     pincel.closePath();
     setTimeout(function(){canvas.classList.add("canvas");
     document.body.classList.remove("overflow-off");
-    div.classList.remove("vh-100");
+    div.classList.remove("tablero-canvas-h");
+    (document.querySelector(".reglas")).classList.remove("display-none");
     },3000);
     setTimeout(function(){scroll("nav")},2500);
     
@@ -378,7 +379,8 @@ function verificarGanador(palabra,letraTeclado) {
         pincel.fillText("Ganaste, felicitaciones!!",450,555);
         setTimeout(function(){canvas.classList.add("canvas");
         document.body.classList.remove("overflow-off");
-        div.classList.remove("vh-100");
+        div.classList.remove("tablero-canvas-h");
+        (document.querySelector(".reglas")).classList.remove("display-none");
         },3500);
         setTimeout(function(){scroll("nav")},3000);
     }

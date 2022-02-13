@@ -11,7 +11,9 @@ function comenzarJuego(event) {
 
     scroll("#tablero-canvas");
 
-    div.classList.add("vh-100");
+    (document.querySelector(".reglas")).classList.add("display-none");
+
+    div.classList.add("tablero-canvas-h");
     document.body.classList.add("overflow-off");
 
     letraCorrecta = [];
@@ -65,8 +67,9 @@ function presionarTecla(event) {
         pincel.fillText("has finalizado el juego, la palabra era: " + palabraSecreta, 215, 555);
         setTimeout(function(){
             canvas.classList.add("canvas");
-            div.classList.remove("vh-100");
+            div.classList.remove("tablero-canvas-h");
             document.body.classList.remove("overflow-off");
+            (document.querySelector(".reglas")).classList.remove("display-none");
         },3000);
         setTimeout(function(){
             scroll("nav");
