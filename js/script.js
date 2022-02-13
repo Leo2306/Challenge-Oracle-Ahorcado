@@ -343,7 +343,6 @@ function dibujarFraseFin() {
     pincel.fillText("Fin del juego!. La palabra correcta era: " + palabraSecreta, 215, 555);
     pincel.closePath();
     setTimeout(function(){canvas.classList.add("canvas");
-    document.body.classList.remove("overflow-off");
     div.classList.remove("tablero-canvas-h");
     (document.querySelector(".reglas")).classList.remove("display-none");
     },3000);
@@ -378,7 +377,6 @@ function verificarGanador(palabra,letraTeclado) {
         pincel.font = "normal small-caps bold 36px Dancing Script";
         pincel.fillText("Ganaste, felicitaciones!!",450,555);
         setTimeout(function(){canvas.classList.add("canvas");
-        document.body.classList.remove("overflow-off");
         div.classList.remove("tablero-canvas-h");
         (document.querySelector(".reglas")).classList.remove("display-none");
         },3500);

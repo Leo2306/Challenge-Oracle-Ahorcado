@@ -14,7 +14,6 @@ function comenzarJuego(event) {
     (document.querySelector(".reglas")).classList.add("display-none");
 
     div.classList.add("tablero-canvas-h");
-    document.body.classList.add("overflow-off");
 
     letraCorrecta = [];
     letraIncorrecta = [];
@@ -68,7 +67,6 @@ function presionarTecla(event) {
         setTimeout(function(){
             canvas.classList.add("canvas");
             div.classList.remove("tablero-canvas-h");
-            document.body.classList.remove("overflow-off");
             (document.querySelector(".reglas")).classList.remove("display-none");
         },3000);
         setTimeout(function(){

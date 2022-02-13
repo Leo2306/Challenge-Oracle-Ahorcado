@@ -101,6 +101,7 @@ button:hover {
   font-size: 1.8rem;
   padding: 2rem;
   border-radius: 0.5rem;
+  margin-top: 200px;
 }
 
 .item-lista {
@@ -109,16 +110,9 @@ button:hover {
   padding: 1rem auto;
 }
 
-.overflow-off {
-  overflow-y: hidden;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-.tablero-canvas {
+#tablero-canvas {
   text-align: center;
+  margin-top: 50px;
 }
 
 .link-parrafo {
@@ -155,7 +149,7 @@ button:hover {
     height: 90%;
     text-align: center;
     margin: 70px auto;
-    margin-top: 150px;
+    margin-top: 200px;
     margin-bottom: 300px;
   }
 
